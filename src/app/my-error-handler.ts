@@ -1,19 +1,15 @@
 import { StoreError } from './Store/app.actions';
-import { ErrorState } from './Store/app.reducer';
 import { Store } from '@ngrx/store';
-import { ErrorHandler, Injectable } from '@angular/core';
-
+import { ErrorHandler, Injectable, Injector } from '@angular/core';
 
 @Injectable()
-export class MyErrorHandler implements ErrorHandler{
+export class MyErrorHandler implements ErrorHandler {
+  constructor(private injector: Injector) {}
 
-  constructor(private store: Store<ErrorState>){}
-
-  handleError(error){
-    console.log(typeof error)
-    console.log(error)
-    // this.store.dispatch(new StoreError(error))
-    
+  handleError(error) {
+    const store = this.injector.get(Store);
+    console.log(typeof error);
+    console.log(error);
+    store.dispatch(new StoreError(error));
   }
-
 }
