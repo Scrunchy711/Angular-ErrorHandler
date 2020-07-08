@@ -1,0 +1,84 @@
+<section 
+class="error-report">
+    <form
+    (ngSubmit)="sendEmail()" 
+    #f="ngForm"
+    id="myform">
+        <h1>Oops! You have encountered an ERROR!</h1>
+        <h3>Your Username:</h3>
+        <mat-form-field>
+            <input 
+           matInput
+           type = "text" 
+           placeholder = "Enter User Name"
+           name = "user_name"
+            >
+        </mat-form-field>
+        <br>
+        <h3>Error Location</h3>
+        <mat-form-field>
+            <input
+           matInput
+           type = "text" 
+           readonly
+           name = "error_location"
+           [value] = "errorLocation$ | async"
+            >
+        </mat-form-field>
+        <br>
+        <h3>Error Message:</h3>
+        <mat-form-field>
+            <input
+           matInput
+           type = "text" 
+           readonly
+           name = "error_message"
+           [value] = "errorMessage"
+            >
+        </mat-form-field>
+        <br>
+        <h3>Error Stack:</h3>
+        <mat-form-field>
+            <textarea 
+           matInput
+           type = "text" 
+           readonly
+           name = "error_stack"
+           [value] = "errorStack"
+            ></textarea>
+        </mat-form-field>
+        <br>
+        <h3>Operating Platform:</h3>
+        <mat-form-field>
+            <input 
+           matInput
+           type = "text" 
+           placeholder = "Enter Operating Platform"
+           name = "operating_platform"
+            >
+        </mat-form-field>
+        <br>
+        <h3> Date: </h3>
+        <mat-form-field>
+            <input 
+           matInput
+           type = "text" 
+           placeholder = "Enter Time and Date"
+           name = "date"
+            >
+        </mat-form-field>
+        <br>
+        <h3>User Message for Tech Personnel</h3>
+        <mat-form-field>
+            <textarea
+            matInput
+            type = "text"
+            name = "description"
+            placeholder="Fill in a description about the steps you took to help us recreate your problem!"
+            ></textarea>
+        </mat-form-field>
+        <br>
+        <button type="submit" color="primary" mat-raised-button>Send</button>
+    </form>
+</section>
+

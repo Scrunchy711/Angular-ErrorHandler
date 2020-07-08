@@ -119,6 +119,10 @@
               "devServerTarget": "bug-feature2:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

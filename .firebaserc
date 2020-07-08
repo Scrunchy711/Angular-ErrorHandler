@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "errorhandler-15ee6": {
+      "hosting": {
+        "bug-feature2": [
+          "errorhandler-15ee6"
+        ]
+      }
+    }
+  }
+}
